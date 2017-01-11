@@ -5,6 +5,9 @@ function send_mail {
         "ftp")
             echo "Script can't connect to FTP server" | mail -s "FTP server is DOWN" -- "$2"
         ;;
+        "restore")
+            cat "$3" | mail -s "Restore is complete" -- "$2"
+        ;;
         "done")
             cat "$3" | mail -s "Backup is complete" -- "$2"
         ;;
@@ -13,4 +16,14 @@ function send_mail {
 
 function latest_backup {
     ls /var/opt/gitlab/backups/ | sort | tail -n 1
+}
+
+function ftp_list_files {
+ftp -n $FTP_HOST << EOF
+quote USER $FTP_USER
+quote PASS $FTP_PASS
+ls $PATH_MAIN
+ls $PATH_CONF
+quit
+EOF
 }

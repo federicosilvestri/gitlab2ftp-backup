@@ -24,7 +24,8 @@ fi
 #
 # Step 2 - Create the backup via gitlab-rake
 #
-/opt/gitlab/bin/gitlab-rake gitlab:backup:create    | tail -a "$LOG"
+echo "INF: Initiate the backup"                     | tee -a "$LOG"
+/opt/gitlab/bin/gitlab-rake gitlab:backup:create    | tee -a "$LOG"
 
 #
 # Step 3 - Create the backup of confis
