@@ -5,9 +5,6 @@ Collection of scripts for make GitLab backups and pushing to FTP server
 ## Automate it
 
 You can automate packages update via Cron, for example:
-
-    # At first need to remove old packages (path, filemask, keep count)
-    0 1 * * * /path/to/backuper/cleaner.sh /var/opt/gitlab/backups/ *.tar 3
     
     # Run backup
     0 2 * * * /path/to/backuper/backup.sh
