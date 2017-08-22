@@ -3,6 +3,10 @@
 # Temporary location of configuration
 CFG="configs"
 
+PATH=$1     # Dir path
+FILE_MASK=$2 # Filename mask
+BACKUP_KEEP=$3     # Exclude latest {count} files
+
 # Email settings
 EMAIL="mail@example.com"
 
