@@ -40,7 +40,7 @@ cd /var/opt/gitlab/backups/
 ftp -n $FTP_HOST << EOF                                                 | tee -a "$LOG"
 quote USER $FTP_USER
 quote PASS $FTP_PASS
-cd $PATH_MAIN
+cd $FTP_PATH_CONF
 get $ftp_latest_backup
 quit
 EOF
@@ -75,7 +75,7 @@ cd "$my_path"
 ftp -n $FTP_HOST << EOF                                                 | tee -a "$LOG"
 quote USER $FTP_USER
 quote PASS $FTP_PASS
-cd $PATH_MAIN
+cd $FTP_PATH_MAIN
 get $ftp_latest_config
 quit
 EOF
