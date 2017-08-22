@@ -48,8 +48,6 @@ done
 # Copy archive to temporary location to allow FTP loading
 cp $BACKUP_PATH/$currentDataBackup .
 
-read -p "waiting..."
-
 #
 # Step 3 - Create the backup of confis
 #
