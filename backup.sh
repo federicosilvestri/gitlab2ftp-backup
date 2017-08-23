@@ -51,8 +51,8 @@ cp $BACKUP_PATH/$currentDataBackup .
 #
 # Step 3 - Create the backup of confis
 #
-confArchiveBackup=$(date "+%s_%Y_%m_%d_gitlab_etc.tar")
-tar -cf "$confArchiveBackup"  /etc/gitlab/
+confArchiveBackup=$(date "+%s_%Y_%m_%d_gitlab_etc.tar.gz")
+tar -cvpzf "$confArchiveBackup" /etc/gitlab/ 
 
 #
 # Step 4 - Push latest backup to ftp server
