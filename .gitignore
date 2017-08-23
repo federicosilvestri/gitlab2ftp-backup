@@ -7,3 +7,4 @@ nbproject
 logs/
 vendor/
 composer.lock
+.DS_Store
